@@ -1,0 +1,296 @@
+@import url('reset.css');
+
+//todo импорт шрифта
+
+$text-color: #f4f9fb;
+$bold-color: #475364;
+$menu-color: #00D4FF;
+$accent-color: #386BF2;
+$gray-color: #8EA4B5;
+
+
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    background-color: $text-color;
+    color: #475364;
+    line-height: 1.5;
+
+}
+
+a, button {
+    transition: all 0.4s ease;
+}
+
+.header {
+    height: 66px;
+    background: #29313C;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+}
+
+
+.header__logo {
+    margin-left: 12px;
+
+    :hover #Symbol, :focus #Symbol {
+        fill: #FFFFFF;
+        transition: fill 0.4s ease;
+    }
+    :hover #Binman, :focus #Binman {
+        fill: $menu-color;
+        transition: fill 0.4s ease;
+    }
+}
+
+.main-page {
+    display: flex;
+    flex-direction: row;
+    background-color: #F4F9FB;
+}
+
+.main-menu {
+    position: fixed;
+    height: calc(100vh - 66px);
+    width: 80px;
+    background-color: #323A45;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 66px;
+    padding-top: 15px;
+
+}
+
+.main-menu__item {
+    width: 50px;
+    height: 40px;
+    margin-bottom: 10px;
+
+}
+
+.main-menu__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid transparent;
+
+
+    &_active {
+        background-color: #282E37;
+        & svg path {
+            fill: #00D4FF;
+        }
+    }
+
+
+
+    &:hover, &:focus {
+        border-color: #00D4FF;
+
+        & svg path {
+            fill: #00D4FF;
+            transition: fill 0.4s ease;
+        }
+
+    }
+}
+
+.applicants {
+    margin-top: 66px;
+    margin-left: 80px;
+    padding: 20px 30px;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+}
+
+.applicants__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.applicants__heading {
+    font-weight: bold;
+    font-size: 22px;
+    //line-height: 24px;
+    color: $bold-color;
+    margin-bottom: 4px;
+}
+
+.applicants__count {
+    font-size: 11px;
+    color: $gray-color;
+    margin-top: 0;
+}
+
+.applicants__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+.applicants__titles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 2px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.applicants__title {
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: $bold-color;
+    width: 25%;
+}
+
+.applicants__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    background-color: #FFFFFF;
+    height: 68px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.applicant, .phone, .mail,.rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+}
+
+.phone__text, .mail__text, .rating__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.applicant__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.applicant__name {
+    font-weight: bold;
+    font-size: 12px;
+    color: $bold-color;
+}
+
+.applicant__vacancy {
+    color: $gray-color;
+    margin-top: 4px;
+}
+
+.applicant__icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E8EFF1;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.phone__number, .mail__address {
+    font-size: 12px;
+    color: $bold-color;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover, &:focus {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.phone__show-more, .mail__show-more {
+    border: none;
+    background-color: transparent;
+    font-size: 10px;
+    color: $gray-color;
+    margin-top: 4px;
+    padding: 0;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
+
+// todo шрифты в rem
+
+.rating__info {
+    margin-right: 90px;
+}
+.rating__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.rating__action {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    background-color: #FFFFFF;
+    border: 1px solid #DBE4E7;
+    border-radius: 3px;
+
+    &:hover, &:focus {
+        background-color: $gray-color;
+        border-color: $gray-color;
+    }
+
+    &:not(:last-child) {
+        margin-right: 5px;
+    }
+}
+
+.rating__stars {
+    min-height: 15px;
+    margin-bottom: 5px;
+}
+
+.rating__text {
+    font-size: 10px;
+    color: $gray-color;
+}
+
+.rating__text_bold {
+    font-weight: bold;
+    color: $bold-color;
+}
+
